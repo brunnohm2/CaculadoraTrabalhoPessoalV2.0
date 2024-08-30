@@ -1,4 +1,6 @@
-import Utils from "./utilities.js"
+import OpFundamentais from "../node_modules/operacoes-fundamentais/Operacoes-Fundamentais.js"
+import EstDescritivas from "../node_modules/estatisticas-descritivas/EstatisticasDescritivas.js"
+import Utils from "../node_modules/utilitarios/utilitarios.js"
 import Error from "./NumberError.js"
 export default class Calculadora {
     constructor() {
@@ -74,10 +76,10 @@ export default class Calculadora {
     get mediaPorHoraF() { return this._mediaPorHoraF }
     get tempoDeOperacaoPorPessoaF() { return this._tempoDeOperacaoPorPessoaF }
 
-    calcTempoOperacional() { this.tempoOperacional = Utils.dividir(Utils.multiplicar(this.quantidade, this.linhaValor), 3600) }
-    calcTaxaDeOperacao() { this.taxaDeOperacao = Utils.porcentagem(this.tempoOperacional, this.tempoDeOperacao) }
-    calcTaxaDeDefeitos() { this.taxaDeDefeitos = Utils.porcentagem(this.quantidade, (this.quantidade + this.defeitos)) }
-    calcMediaPorHora() { this.mediaPorHora = Utils.dividir(this.quantidade, this.tempoDeOperacao) }
+    calcTempoOperacional() { this.tempoOperacional = OpFundamentais.dividir(OpFundamentais.multiplicar(this.quantidade, this.linhaValor), 3600) }
+    calcTaxaDeOperacao() { this.taxaDeOperacao = EstDescritivas.porcentagem(this.tempoOperacional, this.tempoDeOperacao) }
+    calcTaxaDeDefeitos() { this.taxaDeDefeitos = EstDescritivas.porcentagem(this.quantidade, (this.quantidade + this.defeitos)) }
+    calcMediaPorHora() { this.mediaPorHora = OpFundamentais.dividir(this.quantidade, this.tempoDeOperacao) }
     calcTempoDeOperacaoPorPessoa() {
         if (
             this.linhaValor == 26.5 ||
