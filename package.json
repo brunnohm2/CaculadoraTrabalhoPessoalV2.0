@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "estatisticas-descritivas": "file:../../NodeJS-NPM/Bibliotecas/Matemática/Estatisticas-Descritivas",
-    "operacoes-fundamentais": "file:../../NodeJS-NPM/Bibliotecas/Matemática/Operacoes-Fundamentais",
-    "utilitarios": "file:../../NodeJS-NPM/Bibliotecas/Matemática/Utilitarios"
-  }
-}

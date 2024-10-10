@@ -1,38 +1,38 @@
-let quantidade      = window.document.querySelector('input#quantidade')
-let tempo           = window.document.querySelector('select#tempo')
-let multiplicador   = window.document.querySelector('select#multiplicador')
-let descarte        = window.document.querySelector('input#descarte')
-let trabalhadores   = window.document.querySelector('select#trabalhadores')
 
-let tabQuantidade           = window.document.querySelector('td#tabQuantidade')
-let tabCalc1                = window.document.querySelector('td#tabCalc1')
-let tabTempo                = window.document.querySelector('td#tabTempo')
-let tabCalc2                = window.document.querySelector('td#tabCalc2')
-let tabDescarte             = window.document.querySelector('td#tabDescarte')
-let tabDescartePercentual   = window.document.querySelector('td#tabDescartePercentual')
-let tabMediaPorHora         = window.document.querySelector('td#tabMediaPorHora')
-let tabCalc3                = window.document.querySelector('td#tabCalc3')
+export let tempo           = window.document.querySelector('select#tempo')
+export let multiplicador   = window.document.querySelector('select#ct')
+export let descarte        = window.document.querySelector('input#descarte')
+export let trabalhadores   = window.document.querySelector('select#trabalhadores')
 
-let mediaPrimeira = window.document.querySelector('div#mediaPrimeira')
-let mediaFinal = window.document.querySelector('div#mediaFinal')
+export let tabQuantidade           = window.document.querySelector('td#tabQuantidade')
+export let tabCalc1                = window.document.querySelector('td#tabCalc1')
+export let tabTempo                = window.document.querySelector('td#tabTempo')
+export let tabCalc2                = window.document.querySelector('td#tabCalc2')
+export let tabDescarte             = window.document.querySelector('td#tabDescarte')
+export let tabDescartePercentual   = window.document.querySelector('td#tabDescartePercentual')
+export let tabMediaPorHora         = window.document.querySelector('td#tabMediaPorHora')
+export let tabCalc3                = window.document.querySelector('td#tabCalc3')
 
-let aCalc2                  = window.document.querySelector('input#aCalc2')
-let aMediaDP                = window.document.querySelector('input#aMediaDP')
-let aMediaPorHora           = window.document.querySelector('input#aMediaPorHora')
-let aCalc3                  = window.document.querySelector('input#aCalc3')
+export let mediaPrimeira = window.document.querySelector('div#mediaPrimeira')
+export let mediaFinal = window.document.querySelector('div#mediaFinal')
 
-let tabFinalCalc2           = window.document.querySelector('td#tabFinalCalc2')
-let tabFinalMediaDP         = window.document.querySelector('td#tabFinalMediaDP')
-let tabFinalMediaPorHora    = window.document.querySelector('td#tabFinalMediaPorHora')
-let tabFinalCalc3           = window.document.querySelector('td#tabFinalCalc3')
+export let aCalc2                  = window.document.querySelector('input#aCalc2')
+export let aMediaDP                = window.document.querySelector('input#aMediaDP')
+export let aMediaPorHora           = window.document.querySelector('input#aMediaPorHora')
+export let aCalc3                  = window.document.querySelector('input#aCalc3')
 
-function calculo1(a, b){
+export let tabFinalCalc2           = window.document.querySelector('td#tabFinalCalc2')
+export let tabFinalMediaDP         = window.document.querySelector('td#tabFinalMediaDP')
+export let tabFinalMediaPorHora    = window.document.querySelector('td#tabFinalMediaPorHora')
+export let tabFinalCalc3           = window.document.querySelector('td#tabFinalCalc3')
+
+export function calculo1(a, b){
     a = Number(a)
     b = Number(b)
 
     return ((a*b)/3600).toFixed(2)
 }
-function porcentagem(a, b){
+export function porcentagem(a, b){
     a = Number(a)
     b = Number(b)
     let c = (a/b)*100
@@ -41,7 +41,7 @@ function porcentagem(a, b){
 
     return c.toFixed(2)
 }
-function porcentagem2(a, b){
+export function porcentagem2(a, b){
     a = Number(a)
     b = Number(b)
     let c = (a/(b+a))*100
@@ -50,11 +50,12 @@ function porcentagem2(a, b){
 
     return ((a/(b+a))*100).toFixed(2)
 }
-function media(a, b){
+export function media(a, b){
     return (a/b).toFixed(2)
 }
-function gerarOptionTempo(){
-    if(!Number(quantidade.value)>0) return
+export function gerarOptionTempo(){
+    console.log(quantidade)
+    if(!Number(quantidade.textContent)>0) return alert("xxx")
     if(!Number(multiplicador.value) != 0) return
 
     tempo.innerHTML = ''
@@ -74,7 +75,7 @@ function gerarOptionTempo(){
         inicio += minutos
     }
 }
-function dadosTabela(){
+export function dadosTabela(){
     tabQuantidade.innerHTML = quantidade.value
     tabCalc1.innerHTML = calculo1(Number(quantidade.value),Number(multiplicador.value))
     tabTempo.innerHTML = tempo.value
@@ -88,7 +89,7 @@ function dadosTabela(){
     mediaFinal.classList.remove('oculto')
     mediaFinal.classList.add('visivel')
 }
-function valorMultiplicador(){
+export function valorMultiplicador(){
     if(Number(multiplicador.value) == 26.5) return 2
     if(Number(multiplicador.value) == 20.3) return 2
     if(Number(multiplicador.value) == 17.5) return 2
@@ -96,7 +97,7 @@ function valorMultiplicador(){
     if(Number(multiplicador.value) == 20.7) return 2
     return 1
 }
-function finalCalc1(){
+export function finalCalc1(){
     tabFinalCalc2.innerHTML = porcentagem(Number(tabCalc1.innerHTML), Number(tabTempo.innerHTML))
     tabFinalCalc2.innerHTML = ((Number(tabFinalCalc2.innerHTML)+Number(aCalc2.value))/2)
     tabFinalCalc2.innerHTML = Number(tabFinalCalc2.innerHTML).toFixed(2)+'%'

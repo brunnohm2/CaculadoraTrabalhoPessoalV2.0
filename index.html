@@ -1,67 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Calculadora</title>
+    <title>Título</title>
 </head>
-
 <body>
-    <main>
-        <section>
-            <article>
-                <div>
-                    <fieldset class="fieldsetConfiguração">
-                        <legend>Produção do dia:</legend>
-                        <input type="number" name="producao" id="producao" placeholder="Digite o valor da produção">
-                    </fieldset>
-                    <fieldset class="fieldsetConfiguração">
-                        <legend>Multiplicador:</legend>
-                        <select type="number" name="multiplicador" id="multiplicador">
-                            <option value="0">Selecione a linha</option>
-                            <option value="26.5">CBS - 26.5 (2 Pessoas)</option>
-                            <option value="47.5">CBS - 47.5 (1 Pessoa) </option>
-                            <option value="20.3">J/Y - 20.3 (2 Pessoas)</option>
-                            <option value="23.5">J/Y - 23.5 (1 Pessoa)</option>
-                            <option value="17.5">F/Y - 17.5 (2 Pessoas)</option>
-                            <option value="22.5">F/Y - 22.5 (1 Pessoa)</option>
-                            <option value="21">F/A - 21 (2 Pessoas)</option>
-                            <option value="42">F/A - 42 (1 Pessoa)</option>
-                            <option value="20.7">J/A - 20.7 (1 Pessoa)</option>
-                        </select>
-                    </fieldset>
-                </div>
-                <div>
-                    <fieldset class="fieldsetConfiguração">
-                        <legend>Tempo:</legend>
-                        <select name="tempo" id="tempo">
-                            <option>Aguardando...</option>
-                        </select>
-                    </fieldset>
-                    <fieldset class="fieldsetConfiguração">
-                        <legend>Peças com Defeito</legend>
-                        <input type="number" name="peçasDefeito" id="peçasDefeito">
-                    </fieldset>
-                </div>
-                <button type="button">Calcular</button>
-                <div>
-                    <table>
-                        <tr><td id="tabProducao">s</td></tr>
-                        <tr><td id="tabCalc1">s</td></tr>
-                        <tr><td id="tabTempo"></td></tr>
-                        <tr><td id="tabCalc2"></td></tr>
-                        <tr><td id="tabDescarte"></td></tr>
-                        <tr><td id="tabDescartePercentual"></td></tr>
-                        <tr><td id="tabMediaPorHora"></td></tr>
-                        <tr><td id="tabCalc3"></td></tr>
-                    </table>
-                </div>
-            </article>
-        </section>
-    </main>
+    <script src="scripts/testeCalculadora.js" type="module"></script>
 </body>
-
 </html>

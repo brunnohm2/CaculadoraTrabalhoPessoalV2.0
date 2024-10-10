@@ -1,5 +1,6 @@
 @charset "UTF-8";
-:root{
+
+:root {
     --verde: #49a09d;
     --verde-escuro: #2c5f5d;
     --laranja: #D76459;
@@ -7,23 +8,27 @@
     --lilas: #5f2c82;
     --time: .2s;
 }
-*{
+
+* {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-size: 1em;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
     background-image: linear-gradient(to top, var(--verde), var(--lilas));
 }
-main{
+
+main {
     height: 100vh;
     width: 100vw;
 }
-section{
+
+section {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,18 +41,22 @@ section{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
     background-color: var(--laranja-escuro);
 }
-nav{
+
+nav {
     position: relative;
 }
-ul{
+
+ul {
     list-style-type: none;
     margin: 10px;
 }
-ul>li{
+
+ul>li {
     padding: 5px;
     display: inline;
 }
-fieldset{
+
+fieldset {
     margin: 5px 10px 0px 10px;
     background-color: white;
     padding: 3px;
@@ -56,20 +65,22 @@ fieldset{
     box-shadow: 0px 0px 4px rgba(0, 0, 255, 1);
     font-size: 0.8em;
 }
-.fieldsetConfiguração{
+
+.teste {
     display: inline;
     width: 150px;
 }
-input[type=number]{
+
+input[type=number] {
     height: 25px;
     width: 100%;
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: right;
-    font-size: 0.75em;
 }
-select{
+
+select {
     border-radius: 5px;
     border: 1px solid black;
     height: 25px;
@@ -77,7 +88,8 @@ select{
     display: block;
     width: 100%;
 }
-legend{
+
+legend {
     font-size: 0.7em;
     font-weight: bolder;
     padding: 3px;
@@ -86,7 +98,8 @@ legend{
     border-radius: 5px;
     box-shadow: 0px 0px 4px rgba(0, 0, 255, .5);
 }
-table{
+
+table {
     background-color: white;
     margin: 5px 10px 0px 10px;
     display: block;
@@ -95,25 +108,30 @@ table{
     overflow: hidden;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
 }
-caption{
+
+caption {
     font-size: 1.5em;
     background-color: var(--lilas);
     color: white;
     text-shadow: 1px 1px 3px black;
     padding: 5px;
 }
-tr{
+
+tr {
     color: rgb(48, 48, 48);
 }
-tr:nth-child(odd){
+
+tr:nth-child(odd) {
     background-color: var(--verde-escuro);
     color: lightgrey;
 }
-td{
+
+td {
     width: 500px;
     text-align: center;
 }
-button{
+
+button {
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -124,12 +142,15 @@ button{
     box-shadow: 0px 0px 5px black;
     font-weight: 500;
 }
-.oculto{
+
+.oculto {
     display: none;
 }
-.visivel{
+
+.visivel {
     display: block;
 }
-.margem{
- margin-bottom: 5px;
+
+.margem {
+    margin-bottom: 5px;
 }
