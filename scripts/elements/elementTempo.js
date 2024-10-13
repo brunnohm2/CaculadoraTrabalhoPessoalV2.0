@@ -1,26 +1,29 @@
-export const elementTempo = document.createElement("fieldset")
-elementTempo.setAttribute("class", "teste")
-elementTempo.setAttribute("id", "elementTempo")
+import { ElementBuilder } from "./ElementBuilder.js";
 
-const legend = document.createElement("legend")
-legend.innerHTML = "Tempo:"
+const FIELDSET_ATTRIBUTES = {
+    class: "teste",
+    id: "elementTempo"
+}
 
-const select = document.createElement("select")
-select.setAttribute("name", "tempo")
-select.setAttribute("id", "tempo")
-const option = document.createElement("option")
-option.innerHTML = "Aguardando..."
+export const elementTempo = new ElementBuilder("fieldset")
+    .setAttributes(FIELDSET_ATTRIBUTES)
+    .getElement()
 
-select.appendChild(option)
-elementTempo.appendChild(legend)
-elementTempo.appendChild(select)
-console.log(elementTempo)
-// elementTempo.innerHTML =` 
-//     <legend>Tempo:</legend>
-//     <select
-//         name="tempo"
-//         id="tempo"
-//     >
-//         <option>Aguardando...</option>
-//     </select>
-// `
+const legend = new ElementBuilder ("legend")
+    .setTextContent("Tempo:")
+    .appendTo(elementTempo)
+
+const SELECT_ATTRIBUTES = {
+    class: "SelectClass",
+    name: "tempo",
+    id: "tempo"
+
+}
+const select = new ElementBuilder("select")
+    .setAttributes(SELECT_ATTRIBUTES)
+    .appendTo(elementTempo)
+    .getElement()
+
+const option = new ElementBuilder("option")
+    .setTextContent("Aguardando...")
+    .appendTo(select)

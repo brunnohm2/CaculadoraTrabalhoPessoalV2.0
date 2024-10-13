@@ -1,17 +1,24 @@
 import { ElementBuilder } from "./ElementBuilder.js"
-const CLASSE = "teste"
-const ID = "elementPecaComDefeito"
-const LEGENDA = "Peça com Defeito:"
-const PLACEHOLDER = "Valor de Defeito"
 
+const FIELDSET_ATTRIBUTES = {
+    class: "teste",
+    id: "elementPecaComDefeito"
+}
 export const elementPecaComDefeito = new ElementBuilder("fieldset")
-    .setAttributes({class: CLASSE, id: ID })
-    .getElement()
+.setAttributes(FIELDSET_ATTRIBUTES)
+.getElement()
 
-export const legend = new ElementBuilder("legend")
-    .setTextContent(LEGENDA)
-    .appendTo(elementPecaComDefeito)
+const LEGEND_TEXT_CONTENT = "Peça com Defeito:"
+const legend = new ElementBuilder("legend")
+.setTextContent(LEGEND_TEXT_CONTENT)
+.appendTo(elementPecaComDefeito)
 
-export const input = new ElementBuilder("input")
-    .setAttributes({ type: "number", name: "pecaComDefeito", id: "pecaComDefeito", placeholder: PLACEHOLDER })
+const INPUT_ATTRIBUTES = {
+    type: "number",
+    name: "pecaComDefeito",
+    id: "pecaComDefeito",
+    placeholder: "Valor de Defeito"
+}
+const input = new ElementBuilder("input")
+    .setAttributes(INPUT_ATTRIBUTES)
     .appendTo(elementPecaComDefeito)

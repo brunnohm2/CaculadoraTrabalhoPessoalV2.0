@@ -2,6 +2,7 @@ import { elementProducaoDoDia } from "./elements/elementProducaoDoDia.js"
 import { elementCT } from "./elements/elementCT.js"
 import { elementTempo } from "./elements/elementTempo.js"
 import { elementPecaComDefeito } from "./elements/elementPecaComDefeito.js"
+import Calculadora from "./calculadora.js"
 
 const main = document.createElement("main")
 const section = document.createElement("section")
@@ -17,7 +18,8 @@ article.appendChild(elementCT)
 article.appendChild(elementTempo)
 article.appendChild(elementPecaComDefeito)
 
-console.log(body)
-console.log(main)
-console.log(section)
-console.log(article)
+
+function gerarOptionTempo(){
+    let calculadora = new Calculadora
+    console.log(calculadora.producaoDoDia)
+}

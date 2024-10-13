@@ -1,3 +1,5 @@
+import { ElementBuilder } from "./ElementBuilder.js"
+
 const ctContents =
 {
     'CBS':[
@@ -24,28 +26,51 @@ const ctContents =
         { valor: 0, multiplicador: 1, legenda: '0' }
     ]
 }
-export let elementCT = document.createElement("fieldset")
-elementCT.setAttribute("class", "teste")
-elementCT.setAttribute("id", "elementCT")
-let conteudo = `<legend>CT:</legend>`
-conteudo +=`
-<select
-    name="CT"
-    id="CT"
->
-    <option value="0" selected disabled >Select Line CT</option>
-`
 
-    for (let nome in ctContents) {
-        conteudo += `<optgroup label="${nome}">`
-        for (let i in ctContents[nome]) {
-            const element = ctContents[nome][i]
-            let {valor, legenda} = element
-            console.log(legenda)
-            conteudo += `<option value="${valor}">${valor} - (${legenda})</option>`
-        }
-        conteudo += `</optgroup>`
+const FIELDSET_ATTRIBUTES = {
+    class: "teste",
+    id: "elementCT",
+}
+
+export const elementCT = new ElementBuilder("fieldset")
+    .setAttributes(FIELDSET_ATTRIBUTES)
+    .getElement()
+
+export const legenda = new ElementBuilder("legend")
+    .setTextContent("Cycle Time:")
+    .appendTo(elementCT)
+
+export const SELECT_ATTRIBUTES = {
+    class: "SelectClass",
+    name: "cycle_time",
+    id: "cycle_time",
+    oninput: "gerarOptionTempo()"
+}
+export const select = new ElementBuilder("select")
+    .setAttributes(SELECT_ATTRIBUTES)
+    .appendTo(elementCT)
+    .getElement()
+
+const ATRIBUTOS_OPTION = {
+    value: 0,
+    selected: "",
+    disabled: ""
+}
+export const option = new ElementBuilder("option")
+    .setAttributes(ATRIBUTOS_OPTION)
+    .setTextContent("Select Line CT")
+    .appendTo(select)
+
+for (const [nome, valores] of Object.entries(ctContents)) {
+    let optgroup = new ElementBuilder("optgroup")
+        .setAttributes({ label: nome })
+        .appendTo(select)
+        .getElement();
+
+    for (const { valor, legenda } of valores) {
+        let optionGroup = new ElementBuilder("option");
+        optionGroup.setAttributes({ value: valor })
+            .setTextContent(`${valor} - (${legenda})`)
+            .appendTo(optgroup);
     }
-
-conteudo += ` </select>`
-elementCT.innerHTML = conteudo
+}
