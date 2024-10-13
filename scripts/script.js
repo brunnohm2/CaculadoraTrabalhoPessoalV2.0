@@ -1,4 +1,4 @@
-let quantidade      = window.document.querySelector("#producaoDoDia")
+let quantidade      = window.document.querySelector('input#producaoDoDia')
 let tempo           = window.document.querySelector('select#tempo')
 let multiplicador   = window.document.querySelector('select#cycle_time')
 let descarte        = window.document.querySelector('input#pecaComDefeito')
@@ -54,29 +54,28 @@ function media(a, b){
     return (a/b).toFixed(2)
 }
 function gerarOptionTempo(){
-    console.log(quantidade)
+    if(!Number(quantidade.value)>0) return
+    if(!Number(multiplicador.value) != 0) return
 
-    // if(!Number(quantidade.value)>0) return
-    // if(!Number(multiplicador.value) != 0) return
+    tempo.innerHTML = ''
+    let minutos = 0.25
+    let inicio = 4.17
+    let max = 50
 
-    // tempo.innerHTML = ''
-    // let minutos = 0.25
-    // let inicio = 4.17
-    // let max = 50
-
-    // for(let i=0; i<max; i++){
-    //     let valor = calculo1(quantidade.value, multiplicador.value)
-    //     let mediaPorHora = media(quantidade.value,inicio)
-    //     valor = porcentagem(valor, inicio)
-    //     if(valor<=100){
-    //         let option = window.document.createElement('option')
-    //         option.text = `${inicio} - (${valor}%)(${mediaPorHora})`
-    //         option.value = inicio
-    //         tempo.appendChild(option)
-    //     }
-    //     inicio += minutos
-    // }
+    for(let i=0; i<max; i++){
+        let valor = calculo1(quantidade.value, multiplicador.value)
+        let mediaPorHora = media(quantidade.value,inicio)
+        valor = porcentagem(valor, inicio)
+        if(valor<=100){
+            let option = window.document.createElement('option')
+            option.text = `${inicio} - (${valor}%)(${mediaPorHora})`
+            option.value = inicio
+            tempo.appendChild(option)
+        }
+        inicio += minutos
+    }
 }
+
 function dadosTabela(){
     tabQuantidade.innerHTML = quantidade.value
     tabCalc1.innerHTML = calculo1(quantidade.value,multiplicador.value)
