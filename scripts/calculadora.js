@@ -57,8 +57,8 @@ export default class Calculadora {
 
     #inicializarDados() {
         return {
-            producaoDoDia: 1800,
-            ct: 0,
+            producaoDoDia: 0,
+            cycleTime: 0,
             tempoLinhaReal: 0,
             pecaComDefeito: 0,
             tempoLinhaIdeal: 0,
@@ -76,10 +76,10 @@ export default class Calculadora {
      */
     set producaoDoDia(value) { this.#setValue(value, "producaoDoDia") }
     /**
-     * Define o valor de CT.
-     * @param {number} value - Valor de CT.
+     * Define o valor de Cycle Time.
+     * @param {number} value - Valor de Cycle Time.
     */
-    set ct(value) { this.#setValue(value, "ct") }
+    set cycleTime(value) { this.#setValue(value, "cycleTime") }
     /**
      * Define o tempo de linha real.
      * @param {number} value - Tempo de linha real.
@@ -141,7 +141,7 @@ export default class Calculadora {
     }
     // Getters
     get producaoDoDia() { return this.#getValue('producaoDoDia') }
-    get ct() { return this.#getValue('ct') }
+    get cycleTime() { return this.#getValue('cycleTime') }
     get tempoLinhaReal() { return this.#getValue('tempoLinhaReal') }
     get pecaComDefeito() { return this.#getValue('pecaComDefeito') }
     get tempoLinhaIdeal() { return this.#getValue('tempoLinhaIdeal') }
@@ -194,19 +194,19 @@ export default class Calculadora {
     }
 
     /**
-        * Calcula o tempo de linha absoluto com base no valor da produção do dia e no CT.
+        * Calcula o tempo de linha absoluto com base no valor da produção do dia e no Cycle Time.
     */
     calcularTempoLinhaIdeal() {
-        // Tempo de Linha Absoluto = (Valor da Produção do Dia * CT) / 3600
-        const { producaoDoDia: producaoDoDia, ct } = this._dados
-        const value = this.#dividir(this.#multiplicar(producaoDoDia, ct), 3600)
+        // Tempo de Linha Absoluto = (Valor da Produção do Dia * Cycle Time) / 3600
+        const { producaoDoDia: producaoDoDia, cycleTime: cycleTime } = this._dados
+        const value = this.#dividir(this.#multiplicar(producaoDoDia, cycleTime), 3600)
         this.#setValue(value, "tempoLinhaIdeal")
     }
     /**
         * Calcula a porcentagem do tempo de linha real.
     */
-    calculaTempoLinhaReal() {
-        // pct da Linha Real = (Tempo de Linha Absoluto / Tempo de Linha Real) * 100
+    calculaPctTempoLinhaReal() {
+        // Porcentagem da Linha Real = (Tempo de Linha Absoluto / Tempo de Linha Real) * 100
         const { tempoLinhaReal, tempoLinhaIdeal } = this._dados
         const value = this.#porcentagem(tempoLinhaIdeal, tempoLinhaReal)
         this.setPctTempoLinhaReal('turnoAtual', value)
@@ -215,7 +215,7 @@ export default class Calculadora {
         * Calcula a porcentagem de peças sem defeito.
     */
     calcularPecaSemDefeitoPCT() {
-        // pct de Peças Sem Defeito = (Valor da Produção do Dia / (Valor da Produção do Dia + Valor de Peças Descartadas)) * 100
+        // Porcentagem de Peças Sem Defeito = (Valor da Produção do Dia / (Valor da Produção do Dia + Valor de Peças Descartadas)) * 100
         const { pecaComDefeito, producaoDoDia: producaoDoDia } = this._dados
         const value = this.#porcentagem(producaoDoDia, (producaoDoDia + pecaComDefeito))
         this.setPctPecaSemDefeito('turnoAtual', value)
@@ -233,7 +233,7 @@ export default class Calculadora {
         * Calcula a média da porcentagem do tempo de linha real entre dois turnos.
     */
     calcularTempoLinhaRealMediaDosTurnos() {
-        // Média da pct dos dois Ban = (pct do Tempo Real da Linha 1 + pct do Tempo Real da Linha 2) / 2
+        // Média da porcentagem dos dois Ban = (porcentagem do Tempo Real da Linha 1 + porcentagem do Tempo Real da Linha 2) / 2
         const { turnoAtual, turnoPassado} = this._dados.pctTempoLinhaReal
         const value = this.#media(turnoAtual, turnoPassado)
         this.setDadosPorTurno('pctTempoLinhaReal', 'turnoMedia', value)

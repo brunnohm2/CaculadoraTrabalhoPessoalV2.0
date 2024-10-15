@@ -1,5 +1,5 @@
 import { ElementBuilder } from "./ElementBuilder.js"
-
+import { gerarOptionTempo } from "../script.js"
 const ctContents =
 {
     'CBS':[
@@ -42,12 +42,12 @@ export const legenda = new ElementBuilder("legend")
 
 export const SELECT_ATTRIBUTES = {
     class: "SelectClass",
-    name: "cycle_time",
-    id: "cycle_time",
-    oninput: "gerarOptionTempo()"
+    name: "cycleTime",
+    id: "cycleTime",
 }
 export const select = new ElementBuilder("select")
     .setAttributes(SELECT_ATTRIBUTES)
+    .addEventListener('input', gerarOptionTempo)
     .appendTo(elementCT)
     .getElement()
 

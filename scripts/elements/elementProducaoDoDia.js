@@ -1,5 +1,5 @@
 import { ElementBuilder } from "./ElementBuilder.js"
-
+import { gerarOptionTempo } from "../script.js"
 const FIELDSET_ATTRIBUTES = {
     class: "teste",
     id: "elementProducaoDoDias"
@@ -17,9 +17,10 @@ const INPUT_ATTRIBUTES = {
     type: "number",
     name: "producaoDoDia",
     id: "producaoDoDia",
-    placeholder: 'Quantidade',
-    oninput: "gerarOptionTempo()"
+    placeholder: 'Quantidade'
 }
 const input = new ElementBuilder("input")
     .setAttributes(INPUT_ATTRIBUTES)
+    .addEventListener('input', gerarOptionTempo)
     .appendTo(elementProducaoDoDia)
+

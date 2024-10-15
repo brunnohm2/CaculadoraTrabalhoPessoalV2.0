@@ -47,7 +47,16 @@ export class ElementBuilder {
         parent.appendChild(this.element)
         return this
     }
-  
+    /**
+     * Adiciona um Event Listener ao elemento.
+     * @param {string} eventType - O tipo do evento (ex: 'click', 'input', etc).
+     * @param {Function} callback - A função callback a ser executada quando o evento ocorrer.
+     * @returns {ElementBuilder} - Retorna a própria instância para permitir encadeamento.
+     */
+    addEventListener(eventType, callback) {
+        this.element.addEventListener(eventType, callback)
+        return this
+    }
     /**
      * Retorna o elemento criado.
      * @returns {HTMLElement} - O elemento HTML criado.

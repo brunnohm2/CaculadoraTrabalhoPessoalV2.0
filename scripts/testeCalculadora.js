@@ -2,7 +2,7 @@ import Calculadora from "./calculadora.js"
 
 const calculadora = new Calculadora()
 calculadora.producaoDoDia = 1755
-calculadora.ct = 20.3
+calculadora.cycleTime = 20.3
 calculadora.calcularTempoLinhaIdeal()
 calculadora.tempoLinhaReal = 10.92
 calculadora.pecaComDefeito = 5
@@ -20,5 +20,4 @@ calculadora.calcularPecaSemDefeitoMediaDosTurnos()
 calculadora.calcularMediaPorHoraMediaDosTurnos()
 calculadora.calcularTempoAcumulativoPorPessoaDosTurnos()
 console.log(calculadora._dados)
-console.log(calculadora._dados.tempoLinhaIdeal)
 console.log(calculadora._dados.tempoLinhaIdeal)

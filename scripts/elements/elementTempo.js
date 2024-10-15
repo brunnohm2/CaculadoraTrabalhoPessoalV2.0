@@ -15,8 +15,8 @@ const legend = new ElementBuilder ("legend")
 
 const SELECT_ATTRIBUTES = {
     class: "SelectClass",
-    name: "tempo",
-    id: "tempo"
+    name: "tempoLinhaReal",
+    id: "tempoLinhaReal"
 
 }
 const select = new ElementBuilder("select")
