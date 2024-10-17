@@ -43,7 +43,7 @@ export function gerarOptionTempo() {
                     value : inicio,
                     class : classe
                 })
-                .setTextContent(`${inicio} (${pctTempoLinhaReal})(${mediaPorHora})`)
+                .setTextContent(`${inicio} (${pctTempoLinhaReal}%)(${mediaPorHora})`)
                 .appendTo(formTempoLinhaReal)
         }
         inicio += minutos
