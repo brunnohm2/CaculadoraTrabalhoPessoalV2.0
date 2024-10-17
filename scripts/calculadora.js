@@ -254,6 +254,17 @@ export default class Calculadora {
         const value = this.#media(turnoAtual, turnoPassado)
         this.setDadosPorTurno('mediaPorHora', 'turnoMedia', value)
     }
+
+   /**
+    * Calcula o tempo acumulativo por pessoa, multiplica pela quantidade de pessoa do turno atual.
+    * @param {number} multiplicador 
+    * @param {number} tempo 
+    */
+    calcularTempoAcumulativoPorPessoa(multiplicador, tempo){
+        const { turnoAtual } = this._dados.tempoAcumulativoPorPessoa
+        const value = this.#multiplicar(multiplicador, tempo)
+        this.setTempoAcumulativoPorPessoa('turnoAtual', value)
+    }
     /**
         * Calcula o tempo acumulativo por pessoa somando os valores dos turnos atuais e passados.
     */

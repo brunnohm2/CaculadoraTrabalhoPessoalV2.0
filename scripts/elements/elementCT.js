@@ -1,31 +1,6 @@
 import { ElementBuilder } from "./ElementBuilder.js"
 import { gerarOptionTempo } from "../script.js"
-const ctContents =
-{
-    'CBS':[
-        { valor: 47.5, multiplicador: 1, legenda: '1 Pessoa' },
-        { valor: 26.5, multiplicador: 2, legenda: '2 Pessoas' }
-    ],
-    'J/Y':[
-        { valor: 23.5, multiplicador: 1, legenda: '1 Pessoa' },
-        { valor: 20.3, multiplicador: 2, legenda: '2 Pessoas' }
-    ],
-    'J/A':[
-        { valor: 19.5, multiplicador: 1, legenda: '2 Máquinas' },
-        { valor: 17, multiplicador: 2, legenda: '3 Máquinas' }
-    ],
-    'F/Y':[
-        { valor: 22.5, multiplicador: 1, legenda: '1 Pessoa' },
-        { valor: 17.5, multiplicador: 2, legenda: '2 Pessoas' }
-    ],
-    'F/A':[
-        { valor: 39, multiplicador: 1, legenda: 'T4D' },
-        { valor: 21, multiplicador: 2, legenda: 'T4V' }
-    ],
-    'Companion':[
-        { valor: 0, multiplicador: 1, legenda: '0' }
-    ]
-}
+import { CYCLE_TIME_235 } from "../CONTANTES.js"
 
 const FIELDSET_ATTRIBUTES = {
     class: "teste",
@@ -61,7 +36,7 @@ export const option = new ElementBuilder("option")
     .setTextContent("Select Line CT")
     .appendTo(select)
 
-for (const [nome, valores] of Object.entries(ctContents)) {
+for (const [nome, valores] of Object.entries(CYCLE_TIME_235)) {
     let optgroup = new ElementBuilder("optgroup")
         .setAttributes({ label: nome })
         .appendTo(select)

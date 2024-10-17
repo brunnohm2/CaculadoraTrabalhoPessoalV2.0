@@ -8,7 +8,7 @@ export const elementPecaComDefeito = new ElementBuilder("fieldset")
 .setAttributes(FIELDSET_ATTRIBUTES)
 .getElement()
 
-const LEGEND_TEXT_CONTENT = "Peça com Defeito:"
+const LEGEND_TEXT_CONTENT = "不良数 Peça com Defeito:"
 const legend = new ElementBuilder("legend")
 .setTextContent(LEGEND_TEXT_CONTENT)
 .appendTo(elementPecaComDefeito)

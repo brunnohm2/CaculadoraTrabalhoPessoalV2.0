@@ -6,5 +6,5 @@ const BUTTON_ATTRIBUTES = {
 export const elementButtonTabela1 = new ElementBuilder("button")
     .setAttributes(BUTTON_ATTRIBUTES)
     .addEventListener('click', gerarTabela)
-    .setTextContent("Gerar Tabela")
+    .setTextContent("計算する Calcular")
     .getElement()

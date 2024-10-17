@@ -1,4 +1,5 @@
 import Calculadora from "./calculadora.js"
+import { CYCLE_TIME_235 } from "./CONTANTES.js"
 import { ElementBuilder } from "./elements/ElementBuilder.js"
 
 export function gerarOptionTempo() {
@@ -39,7 +40,7 @@ export function gerarOptionTempo() {
             
             let option = new ElementBuilder("option")
                 .setAttributes({
-                    value : pctTempoLinhaReal,
+                    value : inicio,
                     class : classe
                 })
                 .setTextContent(`${inicio} (${pctTempoLinhaReal})(${mediaPorHora})`)
@@ -51,14 +52,50 @@ export function gerarOptionTempo() {
 function ReturnNumber(number){
     return Number(number)
 }
+export function retornarMultiplicador(ctValue){
+    for(const [key, value] of Object.entries(CYCLE_TIME_235)){
+        for(const {multiplicador, valor} of value){
+            if (valor === ctValue) return multiplicador
+
+        }
+    }
+}
 export function gerarTabela(){
     const producaoDoDia = ReturnNumber(document.querySelector("#producaoDoDia").value)
     const cycleTime = ReturnNumber(document.querySelector("#cycleTime").value)
     const tempoLinhaReal = ReturnNumber(document.querySelector("#tempoLinhaReal").value)
     const pecaComDefeito = ReturnNumber(document.querySelector("#pecaComDefeito").value)
-    
+
     const calculadora = new Calculadora
-    calculadora.producaoDoDia = Number(document.querySelector("#producaoDoDia").value)
+    calculadora.producaoDoDia = Number(producaoDoDia)
+    calculadora.cycleTime = Number(cycleTime)
+    calculadora.tempoLinhaReal = Number(tempoLinhaReal)
+    calculadora.pecaComDefeito = Number(pecaComDefeito)
+    calculadora.calcularTempoLinhaIdeal()
+    
+    calculadora.calculaPctTempoLinhaReal()
+    calculadora.calcularPecaSemDefeitoPCT()
+    calculadora.calcularMediaPorHora()
+    calculadora.calcularTempoAcumulativoPorPessoa(retornarMultiplicador(calculadora.cycleTime), calculadora.tempoLinhaReal)
+    
+    const tabProducaoDoDia = window.document.querySelector("#tabProducaoDoDia")
+    const tabTempoLinhaIdeal = window.document.querySelector("#tabTempoLinhaIdeal")
+    const tabTempoLinhaReal = window.document.querySelector("#tabTempoLinhaReal")
+    const tabPctTempoLinhaReal = window.document.querySelector("#tabPctTempoLinhaReal")
+    const tabPecaComDefeito = window.document.querySelector("#tabPecaComDefeito")
+    const tabPctPecaSemDefeito = window.document.querySelector("#tabPctPecaSemDefeito")
+    const tabMediaPorHora = window.document.querySelector("#tabMediaPorHora")
+    const tabTempoAcumulativoPorPessoa = window.document.querySelector("#tabTempoAcumulativoPorPessoa")
+
+    tabProducaoDoDia.textContent = calculadora.producaoDoDia
+    tabTempoLinhaIdeal.textContent = calculadora.tempoLinhaIdeal
+    tabTempoLinhaReal.textContent = calculadora.tempoLinhaReal
+    tabPctTempoLinhaReal.textContent = calculadora.getPctTempoLinhaReal("turnoAtual") + " %"
+    tabPecaComDefeito.textContent = calculadora.pecaComDefeito
+    tabPctPecaSemDefeito.textContent = calculadora.getPctPecaSemDefeito("turnoAtual") + " %"
+    tabMediaPorHora.textContent = calculadora.getMediaPorHora("turnoAtual")
+    tabTempoAcumulativoPorPessoa.textContent = calculadora.getTempoAcumulativoPorPessoa("turnoAtual")
+    console.log()
 //     tabQuantidade.innerHTML = quantidade.value
 //     tabCalc1.innerHTML = calculo1(quantidade.value,multiplicador.value)
 //     tabTempo.innerHTML = tempo.value

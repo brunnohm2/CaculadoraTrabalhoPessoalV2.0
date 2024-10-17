@@ -8,7 +8,7 @@ export const elementProducaoDoDia = new ElementBuilder("fieldset")
     .setAttributes(FIELDSET_ATTRIBUTES)
     .getElement()
 
-const LEGEND_TEXT_CONTENT = "Produção do Dia:"
+const LEGEND_TEXT_CONTENT = "生産台数 Quant. Produção"
 const legend = new ElementBuilder("legend")
     .setTextContent(LEGEND_TEXT_CONTENT)
     .appendTo(elementProducaoDoDia)

@@ -4,8 +4,10 @@
         "CONTEUDO",
         "descricao",
         "japones",
+        "NMCT",
         "Operacoes",
         "portugues",
-        "Utilitarias"
+        "Utilitarias",
+        "visivel"
     ]
 }

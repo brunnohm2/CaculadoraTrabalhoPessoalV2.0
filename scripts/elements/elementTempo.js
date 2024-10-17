@@ -10,7 +10,7 @@ export const elementTempo = new ElementBuilder("fieldset")
     .getElement()
 
 const legend = new ElementBuilder ("legend")
-    .setTextContent("Tempo:")
+    .setTextContent("稼働時間 (H) Tempo:")
     .appendTo(elementTempo)
 
 const SELECT_ATTRIBUTES = {
