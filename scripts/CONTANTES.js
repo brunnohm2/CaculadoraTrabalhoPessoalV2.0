@@ -21,6 +21,7 @@ export const CYCLE_TIME_235 =
         { valor: 21, multiplicador: 2, legenda: 'T4V' }
     ],
     'Companion':[
+        { valor: 0, multiplicador: 1, legenda: '0' },
         { valor: 0, multiplicador: 1, legenda: '0' }
     ]
 }
