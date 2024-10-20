@@ -11,6 +11,15 @@ export default class OperacoesFundamentais {
        return Utilitarios.autoDecimal(total)
     }
     /**
+      * Subtrair: Subtrai os valores e retorna o resultado
+      * @param  {...any} valores Inserir os valores para somar Ex. subtrair(2,3,4)
+      * @returns Retorna o resultado da subtração
+    */
+    static subtrair(valor1, valor2){
+        const total = valor1 - valor2
+        return Utilitarios.autoDecimal(total)
+    }
+    /**
      * Faz a multiplicação dos valores
      * @param  {...any} valores Inserir os valores Ex.: multiplicar(2,3,4)
      * @returns retorna o produto da multiplicação

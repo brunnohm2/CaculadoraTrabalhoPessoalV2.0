@@ -1,4 +1,5 @@
 import Calculadora from "./calculadora.js"
+import OperacoesFundamentais from "./classesUtilitarias/OperacoesFundamentais.js"
 import { CYCLE_TIME_235 } from "./CONTANTES.js"
 import { ElementBuilder } from "./elements/ElementBuilder.js"
 
@@ -99,7 +100,10 @@ export function gerarTabela(){
     tabPctPecaSemDefeito.textContent = calculadora.getPctPecaSemDefeito("turnoAtual") + "%"
     tabMediaPorHora.textContent = calculadora.getMediaPorHora("turnoAtual")
     tabTempoAcumulativoPorPessoa.textContent = calculadora.getTempoAcumulativoPorPessoa("turnoAtual")
-    console.log()
+    
+    const valorTotal = document.querySelector("#valorTotal")
+    valorTotal.value = OperacoesFundamentais.subtrair(calculadora.tempoLinhaReal, calculadora.tempoLinhaIdeal)
+    console.log(valorTotal)
 //     tabQuantidade.innerHTML = quantidade.value
 //     tabCalc1.innerHTML = calculo1(quantidade.value,multiplicador.value)
 //     tabTempo.innerHTML = tempo.value
