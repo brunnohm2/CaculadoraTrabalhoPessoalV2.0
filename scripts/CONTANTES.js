@@ -28,50 +28,50 @@ export const CYCLE_TIME_235 =
 export const DESCRICAO_TABELA_1 = [
     {
         numero: "②",
-        japones: "生産台数 (台)",
-        portugues: "Qtd. de Prod. (U)",
+        japones: "生産台数(台)",
+        portugues: "Qtd. Prod.(U)",
         id: "tabProducaoDoDia"
     },
     {
         numero: "③",
-        japones: "生産数 × NMCT (H)",
+        japones: "生産数×NMCT(H)",
         portugues: "N⁰ de Unidades Prod. × NMCT (H)",
         id: "tabTempoLinhaIdeal"
     },
     {
         numero: "④",
         japones: "稼働時間 (H)",
-        portugues: "Tempo de Funcionamento (H)",
+        portugues: "T. de Fun.(H)",
         id: "tabTempoLinhaReal"
     },
     {
         numero: "⑤",
         japones: "可動率 (%)",
-        portugues: "Taxa de operação (%)",
+        portugues: "Tx. de op.(%)",
         id: "tabPctTempoLinhaReal"
     },
     {
         numero: "⑥",
         japones: "不良数 (台)",
-        portugues: "Número de defeitos (U)",
+        portugues: "Furiyo(U)",
         id: "tabPecaComDefeito"
     },
     {
         numero: "⑦",
-        japones: "直行率 (%)",
-        portugues: "Taxa de Aceitação Direta (%)",
+        japones: "直行率(%)",
+        portugues: "Aceitação Direta (%)",
         id: "tabPctPecaSemDefeito"
     },
     {
         numero: "⑧",
-        japones: "H当り出来高 (台)",
-        portugues: "Produção por hora (U)",
+        japones: "H当り出来高(台)",
+        portugues: "Prod./H (U)",
         id: "tabMediaPorHora"
     },
     {
         numero: "⑨",
-        japones: "投入工数 (H)",
-        portugues: "Mão de obra utilizada (H)",
+        japones: "投入工数(H)",
+        portugues: "Mão de obra(H)",
         id: "tabTempoAcumulativoPorPessoa"
     }
 ]

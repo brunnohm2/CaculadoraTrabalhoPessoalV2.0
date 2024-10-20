@@ -2,7 +2,7 @@ import { DESCRICAO_TABELA_1 } from "../../CONTANTES.js"
 import { ElementBuilder } from "../ElementBuilder.js"
 
 const TABLE_ATTRIBUTES = {
-    class: "oculto",
+    class: "visivel",
     id: "divTabela1",
     name: "divTabela1"
 }
