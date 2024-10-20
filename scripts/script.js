@@ -64,6 +64,11 @@ export function retornarMultiplicador(ctValue){
 export function gerarTabela(){
     const tabela = document.querySelector("#divTabela1")
     tabela.className = "visivel"
+
+    const divTempoDeInatividade = document.querySelector("#TempoDeInatividade")
+    divTempoDeInatividade.className = "visivel"
+    
+
     const producaoDoDia = ReturnNumber(document.querySelector("#producaoDoDia").value)
     const cycleTime = ReturnNumber(document.querySelector("#cycleTime").value)
     const tempoLinhaReal = ReturnNumber(document.querySelector("#tempoLinhaReal").value)
