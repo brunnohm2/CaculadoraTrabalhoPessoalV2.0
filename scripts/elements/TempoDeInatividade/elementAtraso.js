@@ -10,6 +10,8 @@ const  INPUT_ATTRIBUTES = {
     name: "atraso",
     id: "atraso",
     min: 0,
-    max: 100
+    max: 100,
+    step: 0.01,
+    value: 0
 }
 export const elementAtraso = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()

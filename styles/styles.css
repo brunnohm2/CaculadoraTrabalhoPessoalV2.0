@@ -135,9 +135,10 @@ tr:nth-child(odd) {
 }
 
 td {
-    width: 500px;
-    text-align: center;
-    font-size: .65em;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    font-size: .68em;
 }
 
 button {

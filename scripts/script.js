@@ -94,9 +94,9 @@ export function gerarTabela(){
     tabProducaoDoDia.textContent = calculadora.producaoDoDia
     tabTempoLinhaIdeal.textContent = calculadora.tempoLinhaIdeal
     tabTempoLinhaReal.textContent = calculadora.tempoLinhaReal
-    tabPctTempoLinhaReal.textContent = calculadora.getPctTempoLinhaReal("turnoAtual") + " %"
+    tabPctTempoLinhaReal.textContent = calculadora.getPctTempoLinhaReal("turnoAtual") + "%"
     tabPecaComDefeito.textContent = calculadora.pecaComDefeito
-    tabPctPecaSemDefeito.textContent = calculadora.getPctPecaSemDefeito("turnoAtual") + " %"
+    tabPctPecaSemDefeito.textContent = calculadora.getPctPecaSemDefeito("turnoAtual") + "%"
     tabMediaPorHora.textContent = calculadora.getMediaPorHora("turnoAtual")
     tabTempoAcumulativoPorPessoa.textContent = calculadora.getTempoAcumulativoPorPessoa("turnoAtual")
     console.log()

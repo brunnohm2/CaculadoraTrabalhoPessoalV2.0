@@ -15,11 +15,9 @@ for(const {id, numero, japones, portugues} of DESCRICAO_TABELA_1){
     const tr = new ElementBuilder("tr")
         .appendTo(elementTabela1)
         .getElement()
-    const tdNumero = new ElementBuilder("td")
-        .setTextContent(numero)
-        .appendTo(tr)
+
     const tdDescricao = new ElementBuilder("td")
-        .setTextContent(`${japones} ${portugues}`)
+        .setTextContent(`${numero} ${japones} ${portugues}`)
         .appendTo(tr)
     const tdValues = new ElementBuilder("td")
         .setTextContent("")
