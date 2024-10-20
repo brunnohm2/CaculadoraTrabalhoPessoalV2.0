@@ -1,18 +1,10 @@
-import { ElementBuilder } from "../ElementBuilder.js"
-
+import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { Component } from "../Component.js"
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: "FIELDSET_CLASS",
     id: "elementTempoDeFalha"
 }
-export const elementTempoDeFalha = new ElementBuilder("fieldset")
-    .setAttributes(FIELDSET_ATTRIBUTES)
-    .getElement()
-
-const LEGEND_TEXT_CONTENT = "Tempo de Falha:"
-const legend = new ElementBuilder("legend")
-    .setTextContent(LEGEND_TEXT_CONTENT)
-    .appendTo(elementTempoDeFalha)
-
+const LEGEND_TEXT_CONTENT = "故障時間 Tempo de Falha:"
 const  INPUT_ATTRIBUTES = {
     type: "range",
     name: "atraso",
@@ -20,6 +12,4 @@ const  INPUT_ATTRIBUTES = {
     min: 0,
     max: 100
 }
-const input = new ElementBuilder("input")
-    .setAttributes(INPUT_ATTRIBUTES)
-    .appendTo(elementTempoDeFalha)
+export const elementTempoDeFalha = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()

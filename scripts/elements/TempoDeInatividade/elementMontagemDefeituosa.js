@@ -1,17 +1,10 @@
-import { ElementBuilder } from "../ElementBuilder.js";
-
+import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { Component } from "../Component.js"
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: "FIELDSET_CLASS",
     id: "elementMontagemDefeituosa"
 }
-export const elementMontagemDefeituosa = new ElementBuilder("fieldset")
-    .setAttributes(FIELDSET_ATTRIBUTES)
-    .getElement()
-
-const legend = new ElementBuilder("legend")
-    .setTextContent("Montagem Defeituosa:")
-    .appendTo(elementMontagemDefeituosa)
-
+const LEGEND_TEXT_CONTENT = "組付け不良 Montagem Defeituosa:"
 const  INPUT_ATTRIBUTES = {
     type: "range",
     name: "atraso",
@@ -19,6 +12,4 @@ const  INPUT_ATTRIBUTES = {
     min: 0,
     max: 100
 }
-const input = new ElementBuilder("input")
-    .setAttributes(INPUT_ATTRIBUTES)
-    .appendTo(elementMontagemDefeituosa)
+export const elementMontagemDefeituosa = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()

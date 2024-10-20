@@ -87,6 +87,8 @@ export function gerarTabela(){
     const tabMediaPorHora = window.document.querySelector("#tabMediaPorHora")
     const tabTempoAcumulativoPorPessoa = window.document.querySelector("#tabTempoAcumulativoPorPessoa")
 
+    const tempoDeInatividade = Number(document.querySelector("#tabTempoLinhaIdeal").textContent)-Number(document.querySelector("#tabTempoLinhaReal").textContent)
+
     tabProducaoDoDia.textContent = calculadora.producaoDoDia
     tabTempoLinhaIdeal.textContent = calculadora.tempoLinhaIdeal
     tabTempoLinhaReal.textContent = calculadora.tempoLinhaReal

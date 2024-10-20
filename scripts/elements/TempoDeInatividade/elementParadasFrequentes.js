@@ -1,17 +1,10 @@
-import { ElementBuilder } from "../ElementBuilder.js";
-
+import { FIELDSET_CLASS } from "../../CONTANTES.js";
+import { Component } from "../Component.js";
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: "FIELDSET_CLASS",
     id: "elementParadasFrequentes"
 }
-export const elementParadasFrequentes = new ElementBuilder("fieldset")
-    .setAttributes(FIELDSET_ATTRIBUTES)
-    .getElement()
-
-const legend = new ElementBuilder("legend")
-    .setTextContent("Paradas Frequentes:")
-    .appendTo(elementParadasFrequentes)
-
+const LEGEND_TEXT_CONTENT = "頻発停止 Paradas Frequentes:"
 const  INPUT_ATTRIBUTES = {
     type: "range",
     name: "atraso",
@@ -19,6 +12,5 @@ const  INPUT_ATTRIBUTES = {
     min: 0,
     max: 100
 }
-const input = new ElementBuilder("input")
-    .setAttributes(INPUT_ATTRIBUTES)
-    .appendTo(elementParadasFrequentes)
+
+export const elementParadasFrequentes = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()

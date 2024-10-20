@@ -75,3 +75,4 @@ export const DESCRICAO_TABELA_1 = [
         id: "tabTempoAcumulativoPorPessoa"
     }
 ]
+export const FIELDSET_CLASS = "teste"

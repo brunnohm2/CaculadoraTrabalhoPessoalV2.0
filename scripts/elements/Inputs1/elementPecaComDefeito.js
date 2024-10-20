@@ -1,17 +1,12 @@
-import { ElementBuilder } from "../ElementBuilder.js"
+import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { Component } from "../Component.js"
 
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: FIELDSET_CLASS,
     id: "elementPecaComDefeito"
 }
-export const elementPecaComDefeito = new ElementBuilder("fieldset")
-.setAttributes(FIELDSET_ATTRIBUTES)
-.getElement()
 
 const LEGEND_TEXT_CONTENT = "不良数 Peça com Defeito:"
-const legend = new ElementBuilder("legend")
-.setTextContent(LEGEND_TEXT_CONTENT)
-.appendTo(elementPecaComDefeito)
 
 const INPUT_ATTRIBUTES = {
     type: "number",
@@ -19,6 +14,5 @@ const INPUT_ATTRIBUTES = {
     id: "pecaComDefeito",
     placeholder: "Valor de Defeito"
 }
-const input = new ElementBuilder("input")
-    .setAttributes(INPUT_ATTRIBUTES)
-    .appendTo(elementPecaComDefeito)
+
+export const elementPecaComDefeito = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()

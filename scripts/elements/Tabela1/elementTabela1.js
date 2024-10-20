@@ -11,8 +11,6 @@ export const elementTabela1 = new ElementBuilder("table")
     .setAttributes(TABLE_ATTRIBUTES)
     .getElement()
 
-
-
 for(const {id, numero, japones, portugues} of DESCRICAO_TABELA_1){
     const tr = new ElementBuilder("tr")
         .appendTo(elementTabela1)
@@ -24,7 +22,7 @@ for(const {id, numero, japones, portugues} of DESCRICAO_TABELA_1){
         .setTextContent(`${japones} ${portugues}`)
         .appendTo(tr)
     const tdValues = new ElementBuilder("td")
-        .setTextContent(`...`)
+        .setTextContent("")
         .setAttributes({id: `${id}`})
         .appendTo(tr)
 }

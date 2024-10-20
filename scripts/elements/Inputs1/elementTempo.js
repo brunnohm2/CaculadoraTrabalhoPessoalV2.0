@@ -1,7 +1,8 @@
+import { FIELDSET_CLASS } from "../../CONTANTES.js";
 import { ElementBuilder } from "../ElementBuilder.js";
 
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: FIELDSET_CLASS,
     id: "elementTempo"
 }
 

@@ -1,9 +1,9 @@
 import { ElementBuilder } from "../ElementBuilder.js"
 import { gerarOptionTempo } from "../../script.js"
-import { CYCLE_TIME_235 } from "../../CONTANTES.js"
+import { CYCLE_TIME_235, FIELDSET_CLASS } from "../../CONTANTES.js"
 
 const FIELDSET_ATTRIBUTES = {
-    class: "teste",
+    class: FIELDSET_CLASS,
     id: "elementCT",
 }
 
