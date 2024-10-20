@@ -1,4 +1,4 @@
-import { ElementBuilder } from "./ElementBuilder.js";
+import { ElementBuilder } from "../ElementBuilder.js";
 
 const FIELDSET_ATTRIBUTES = {
     class: "teste",

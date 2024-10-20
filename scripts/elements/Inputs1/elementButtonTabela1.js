@@ -1,5 +1,6 @@
-import { ElementBuilder } from "./ElementBuilder.js"
-import { gerarTabela } from "../script.js"
+import { gerarTabela } from "../../script.js"
+import { ElementBuilder } from "../ElementBuilder.js"
+//import { gerarTabela } from "../../script.js"
 const BUTTON_ATTRIBUTES = {
     type: "button"
 }

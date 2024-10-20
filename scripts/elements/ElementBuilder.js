@@ -32,7 +32,7 @@ export class ElementBuilder {
      * Define o conteúdo de texto do elemento.
      * @param {string} text - O conteúdo de texto a ser definido.
      * @returns {ElementBuilder} - Retorna a própria instância para permitir encadeamento.
-     */
+    */
     setTextContent(text) {
         this.element.textContent = text
         return this
@@ -42,9 +42,18 @@ export class ElementBuilder {
      * Anexa o elemento ao elemento pai especificado.
      * @param {HTMLElement} parent - O elemento pai ao qual anexar o elemento criado.
      * @returns {ElementBuilder} - Retorna a própria instância para permitir encadeamento.
-     */
+    */
     appendTo(parent) {
         parent.appendChild(this.element)
+        return this
+    }
+    /**
+     * Anexa um elemento filho ao elemento criado.
+     * @param {HTMLElement} child - O elemento filho a ser anexado.
+     * @returns {ElementBuilder} - Retorna a própria instância para permitir encadeamento.
+    */
+    appendChild(child) {
+        this.element.appendChild(child)
         return this
     }
     /**

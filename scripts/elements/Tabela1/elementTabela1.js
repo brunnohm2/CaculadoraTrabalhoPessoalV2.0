@@ -1,5 +1,5 @@
-import { DESCRICAO_TABELA_1 } from "../CONTANTES.js"
-import { ElementBuilder } from "./ElementBuilder.js"
+import { DESCRICAO_TABELA_1 } from "../../CONTANTES.js"
+import { ElementBuilder } from "../ElementBuilder.js"
 
 const TABLE_ATTRIBUTES = {
     class: "visivel",

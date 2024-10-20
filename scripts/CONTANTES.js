@@ -28,13 +28,13 @@ export const DESCRICAO_TABELA_1 = [
     {
         numero: "②",
         japones: "生産台数 (台)",
-        portugues: "Quantidade de Produção (Unidades)",
+        portugues: "Qtd. de Prod. (U)",
         id: "tabProducaoDoDia"
     },
     {
         numero: "③",
         japones: "生産数 × NMCT (H)",
-        portugues: "Número de Unidades Produzidas × NMCT (H)",
+        portugues: "N⁰ de Unidades Prod. × NMCT (H)",
         id: "tabTempoLinhaIdeal"
     },
     {
@@ -52,7 +52,7 @@ export const DESCRICAO_TABELA_1 = [
     {
         numero: "⑥",
         japones: "不良数 (台)",
-        portugues: "Número de defeitos (Unidades)",
+        portugues: "Número de defeitos (U)",
         id: "tabPecaComDefeito"
     },
     {
@@ -64,7 +64,7 @@ export const DESCRICAO_TABELA_1 = [
     {
         numero: "⑧",
         japones: "H当り出来高 (台)",
-        portugues: "Produção por hora (Unidades)",
+        portugues: "Produção por hora (U)",
         id: "tabMediaPorHora"
     },
     {

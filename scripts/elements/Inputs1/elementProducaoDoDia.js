@@ -1,8 +1,8 @@
-import { ElementBuilder } from "./ElementBuilder.js"
-import { gerarOptionTempo } from "../script.js"
+import { ElementBuilder } from "../ElementBuilder.js"
+import { gerarOptionTempo } from "../../script.js"
 const FIELDSET_ATTRIBUTES = {
     class: "teste",
-    id: "elementProducaoDoDias"
+    id: "elementProducaoDoDia"
 }
 export const elementProducaoDoDia = new ElementBuilder("fieldset")
     .setAttributes(FIELDSET_ATTRIBUTES)
