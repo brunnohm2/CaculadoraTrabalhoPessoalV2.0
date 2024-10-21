@@ -21,7 +21,7 @@ export const CYCLE_TIME_235 =
         { valor: 21, multiplicador: 2, legenda: 'T4V' }
     ],
     'コンパニオン':[
-        { valor: 45, multiplicador: 1, legenda: '0' }
+        { valor: 45, multiplicador: 1, legenda: '1 Pessoa' }
     ]
 }
 export const DESCRICAO_TABELA_1 = [
