@@ -20,9 +20,8 @@ export const CYCLE_TIME_235 =
         { valor: 39, multiplicador: 1, legenda: 'T4D' },
         { valor: 21, multiplicador: 2, legenda: 'T4V' }
     ],
-    'Companion':[
-        { valor: 0, multiplicador: 1, legenda: '0' },
-        { valor: 0, multiplicador: 1, legenda: '0' }
+    'コンパニオン':[
+        { valor: 45, multiplicador: 1, legenda: '0' }
     ]
 }
 export const DESCRICAO_TABELA_1 = [
