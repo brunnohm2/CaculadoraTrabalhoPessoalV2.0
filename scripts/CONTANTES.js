@@ -1,6 +1,6 @@
 export const CYCLE_TIME_235 =
 {
-    'CBS-センターベアリング':[
+    'CBS':[
         { valor: 47.5, multiplicador: 1, legenda: '1 Pessoa' },
         { valor: 26.5, multiplicador: 2, legenda: '2 Pessoas' }
     ],
