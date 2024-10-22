@@ -1,22 +1,22 @@
 export const CYCLE_TIME_235 =
 {
-    'CBS - センターベアリング':[
+    'CBS-センターベアリング':[
         { valor: 47.5, multiplicador: 1, legenda: '1 Pessoa' },
         { valor: 26.5, multiplicador: 2, legenda: '2 Pessoas' }
     ],
-    'J/Y - ジョイントヨク':[
+    'J/Y-ジョイントヨク':[
         { valor: 23.5, multiplicador: 1, legenda: '1 Pessoa' },
         { valor: 20.3, multiplicador: 2, legenda: '2 Pessoas' }
     ],
-    'J/A - ジョイントサブ ASSY':[
+    'J/A-ジョイントサブASSY':[
         { valor: 19.5, multiplicador: 2, legenda: '2 Máquinas' },
         { valor: 17, multiplicador: 2, legenda: '3 Máquinas' }
     ],
-    'F/Y - フランジヨク':[
+    'F/Y-フランジヨク':[
         { valor: 22.5, multiplicador: 1, legenda: '1 Pessoa' },
         { valor: 17.5, multiplicador: 2, legenda: '2 Pessoas' }
     ],
-    'F/A - フランジサブ ASSY:[
+    'F/A-フランジサブ ASSY:[
         { valor: 39, multiplicador: 1, legenda: 'T4D' },
         { valor: 21, multiplicador: 2, legenda: 'T4V' }
     ],
