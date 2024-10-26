@@ -4,7 +4,7 @@ const FIELDSET_ATTRIBUTES = {
     class: "somaValores",
     id: "somaValores"
 }
-const LEGEND_TEXT_CONTENT = "Soma"
+const LEGEND_TEXT_CONTENT = "Valor Restante"
 const INPUT_ATTRIBUTES = {
     type: "number",
     name: "valorSoma",

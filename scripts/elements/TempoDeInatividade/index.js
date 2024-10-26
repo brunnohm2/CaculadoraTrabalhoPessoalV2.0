@@ -8,7 +8,7 @@ import { elementTrocaDeFerramenta } from "./elementTrocaDeFerramenta.js";
 import { elementValorTotal } from "./elementValorTotal.js";
 
 const TEMPO_DE_INATIVIDADE_ATTRIBUTES = {
-    class: "visivel",
+    class: "oculto",
     id: "TempoDeInatividade",
     name: "TempoDeInatividade"
 }
