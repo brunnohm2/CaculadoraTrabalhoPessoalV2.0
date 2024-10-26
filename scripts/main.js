@@ -17,10 +17,6 @@ article.appendChild(elementTabela1)
 
 
 article.appendChild(tempoDeInatividade)
-const min_range = 0
 
-const max_range = Number(document.querySelector("#tabTempoLinhaIdeal").textContent)-Number(document.querySelector("#tabTempoLinhaReal").textContent)
-const set_max = document.querySelector("#tabTempoLinhaIdeal").textContent
-console.log(max_range)
 
 

@@ -1,4 +1,4 @@
-import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { calcularRange } from "../../script.js"
 import { Component } from "../Component.js"
 const FIELDSET_ATTRIBUTES = {
     class: "FIELDSET_CLASS",
@@ -7,11 +7,20 @@ const FIELDSET_ATTRIBUTES = {
 const LEGEND_TEXT_CONTENT = "段替・刃交 Troca de ferramenta/configuração:"
 const  INPUT_ATTRIBUTES = {
     type: "range",
-    name: "atraso",
-    id: "atraso",
+    name: "trocaDeFerramenta",
+    id: "trocaDeFerramenta",
     min: 0,
     max: 100,
     step: 0.01,
     value: 0
 }
-export const elementTrocaDeFerramenta = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()
+const EVENT_LISTENER = {
+    type: 'input', 
+    callback: calcularRange
+}
+export const elementTrocaDeFerramenta = new Component(
+    FIELDSET_ATTRIBUTES,
+    LEGEND_TEXT_CONTENT,
+    INPUT_ATTRIBUTES,
+    EVENT_LISTENER
+).getElement()

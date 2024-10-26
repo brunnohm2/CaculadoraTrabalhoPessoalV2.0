@@ -2,12 +2,13 @@ import { ElementBuilder } from "../ElementBuilder.js";
 import { elementAtraso } from "./elementAtraso.js";
 import { elementMontagemDefeituosa } from "./elementMontagemDefeituosa.js";
 import { elementParadasFrequentes } from "./elementParadasFrequentes.js";
+import { elementSomaValores } from "./elementSomaValores.js";
 import { elementTempoDeFalha } from "./elementTempoDeFalha.js";
 import { elementTrocaDeFerramenta } from "./elementTrocaDeFerramenta.js";
 import { elementValorTotal } from "./elementValorTotal.js";
 
 const TEMPO_DE_INATIVIDADE_ATTRIBUTES = {
-    class: "oculto",
+    class: "visivel",
     id: "TempoDeInatividade",
     name: "TempoDeInatividade"
 }
@@ -19,4 +20,5 @@ export const tempoDeInatividade = new ElementBuilder("div")
     .appendChild(elementMontagemDefeituosa)
     .appendChild(elementAtraso)
     .appendChild(elementTrocaDeFerramenta)
+    .appendChild(elementSomaValores)
     .getElement()

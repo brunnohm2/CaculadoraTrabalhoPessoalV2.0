@@ -1,5 +1,6 @@
 import Calculadora from "./calculadora.js"
 import OperacoesFundamentais from "./classesUtilitarias/OperacoesFundamentais.js"
+import Utilitarios from "./classesUtilitarias/Utilitarios.js"
 import { CYCLE_TIME_235 } from "./CONTANTES.js"
 import { ElementBuilder } from "./elements/ElementBuilder.js"
 
@@ -68,7 +69,6 @@ export function gerarTabela(){
     const divTempoDeInatividade = document.querySelector("#TempoDeInatividade")
     divTempoDeInatividade.className = "visivel"
     
-
     const producaoDoDia = ReturnNumber(document.querySelector("#producaoDoDia").value)
     const cycleTime = ReturnNumber(document.querySelector("#cycleTime").value)
     const tempoLinhaReal = ReturnNumber(document.querySelector("#tempoLinhaReal").value)
@@ -95,8 +95,6 @@ export function gerarTabela(){
     const tabMediaPorHora = window.document.querySelector("#tabMediaPorHora")
     const tabTempoAcumulativoPorPessoa = window.document.querySelector("#tabTempoAcumulativoPorPessoa")
 
-    const tempoDeInatividade = Number(document.querySelector("#tabTempoLinhaIdeal").textContent)-Number(document.querySelector("#tabTempoLinhaReal").textContent)
-
     tabProducaoDoDia.textContent = calculadora.producaoDoDia
     tabTempoLinhaIdeal.textContent = calculadora.tempoLinhaIdeal
     tabTempoLinhaReal.textContent = calculadora.tempoLinhaReal
@@ -108,41 +106,61 @@ export function gerarTabela(){
     
     const valorTotal = document.querySelector("#valorTotal")
     valorTotal.value = OperacoesFundamentais.subtrair(calculadora.tempoLinhaReal, calculadora.tempoLinhaIdeal)
-    console.log(valorTotal)
-//     tabQuantidade.innerHTML = quantidade.value
-//     tabCalc1.innerHTML = calculo1(quantidade.value,multiplicador.value)
-//     tabTempo.innerHTML = tempo.value
-//     tabCalc2.innerHTML = porcentagem(tabCalc1.innerHTML, tabTempo.innerHTML)+'%'
-//     tabDescarte.innerHTML = descarte.value
-//     tabDescartePercentual.innerHTML = porcentagem2(quantidade.value, descarte.value)+'%'
-//     tabMediaPorHora.innerHTML = media(quantidade.value, tempo.value)
-//     tabCalc3.innerHTML = tempo.value*valorMultiplicador()
-//     mediaPrimeira.classList.remove('oculto')
-//     mediaPrimeira.classList.add('visivel')
-//     mediaFinal.classList.remove('oculto')
-//     mediaFinal.classList.add('visivel')
+    valorTotal.setAttribute("min","0")
+    valorTotal.setAttribute("max",`${valorTotal.value}`)
+
+    const atraso = window.document.querySelector("#atraso")
+    const montagemDefeituosa = window.document.querySelector("#montagemDefeituosa")
+    const paradasFrequentes = window.document.querySelector("#paradasFrequentes")
+    const tempoDeFalha = window.document.querySelector("#tempoDeFalha")
+    const trocaDeFerramenta = window.document.querySelector("#trocaDeFerramenta")
+
+    atraso.setAttribute("max",`${valorTotal.value}`)
+    montagemDefeituosa.setAttribute("max",`${valorTotal.value}`)
+    paradasFrequentes.setAttribute("max",`${valorTotal.value}`)
+    tempoDeFalha.setAttribute("max",`${valorTotal.value}`)
+    trocaDeFerramenta.setAttribute("max",`${valorTotal.value}`)
+
+    const valorSoma = document.querySelector("#valorSoma")
+    valorSoma.value = valorTotal.value
+    calcularRange()
 }
-// function valorMultiplicador(){
-//     if(Number(multiplicador.value) == 26.5) return 2
-//     if(Number(multiplicador.value) == 20.3) return 2
-//     if(Number(multiplicador.value) == 17.5) return 2
-//     if(Number(multiplicador.value) == 21  ) return 2
-//     if(Number(multiplicador.value) == 20.7) return 2
-//     return 1
-// }
-// function finalCalc1(){
-//     tabFinalCalc2.innerHTML = porcentagem(Number(tabCalc1.innerHTML), Number(tabTempo.innerHTML))
-//     tabFinalCalc2.innerHTML = ((Number(tabFinalCalc2.innerHTML)+Number(aCalc2.value))/2)
-//     tabFinalCalc2.innerHTML = Number(tabFinalCalc2.innerHTML).toFixed(2)+'%'
+export function calcularRange(){
+    const atraso = window.document.querySelector("#atraso")
+    const montagemDefeituosa = window.document.querySelector("#montagemDefeituosa")
+    const paradasFrequentes = window.document.querySelector("#paradasFrequentes")
+    const tempoDeFalha = window.document.querySelector("#tempoDeFalha")
+    const trocaDeFerramenta = window.document.querySelector("#trocaDeFerramenta")
+    const valorSoma = document.querySelector("#valorSoma")
+    const valorTotal = document.querySelector("#valorTotal")
+    valorSoma.value = valorTotal.value
 
-//     tabFinalMediaDP.innerHTML = porcentagem2(Number(quantidade.value), Number(descarte.value))
-//     tabFinalMediaDP.innerHTML = ((Number(tabFinalMediaDP.innerHTML)+Number(aMediaDP.value))/2)
-//     tabFinalMediaDP.innerHTML = Number(tabFinalMediaDP.innerHTML).toFixed(2)+'%'
+    const legendAtraso = window.document.querySelector("#elementAtraso>legend")
+    let legendBKP = "遅れ Atraso:"
+    legendAtraso.textContent = `${legendBKP} ${atraso.value}`
 
-//     tabFinalMediaPorHora.innerHTML = Number(media(Number(quantidade.value), Number(tempo.value)))
-//     tabFinalMediaPorHora.innerHTML = ((Number(tabFinalMediaPorHora.innerHTML)+Number(aMediaPorHora.value))/2)
-//     tabFinalMediaPorHora.innerHTML = Number(tabFinalMediaPorHora.innerHTML).toFixed(2)
+    const legendMontagemDefeituosa = window.document.querySelector("#elementMontagemDefeituosa>legend")
+    legendBKP = "組付け不良 Montagem Defeituosa:"
+    legendMontagemDefeituosa.textContent = `${legendBKP} ${montagemDefeituosa.value}`
 
-//     let testar = (Number(aCalc3.value)+Number(tabCalc3.innerHTML))
-//     tabFinalCalc3.innerHTML = Number(testar).toFixed(2)
-// }
+    const legendParadasFrequentes = window.document.querySelector("#elementParadasFrequentes>legend")
+    legendBKP = "頻発停止 Paradas Frequentes:"
+    legendParadasFrequentes.textContent = `${legendBKP} ${paradasFrequentes.value}`
+
+    const legendTempoDeFalha = window.document.querySelector("#elementTempoDeFalha>legend")
+    legendBKP = "故障時間 Tempo de Falha:"
+    legendTempoDeFalha.textContent = `${legendBKP} ${tempoDeFalha.value}`
+
+    const legendTrocaDeFerramenta = window.document.querySelector("#elementTrocaDeFerramenta>legend")
+    legendBKP = "段替・刃交 Troca de ferramenta/configuração:"
+    legendTrocaDeFerramenta.textContent = `${legendBKP} ${trocaDeFerramenta.value}`
+
+    console.log(legendAtraso)
+    valorSoma.value = Utilitarios.autoDecimal(valorSoma.value-OperacoesFundamentais.adicao(
+        atraso.value,
+        montagemDefeituosa.value,
+        paradasFrequentes.value,
+        tempoDeFalha.value,
+        trocaDeFerramenta.value
+    ))
+}

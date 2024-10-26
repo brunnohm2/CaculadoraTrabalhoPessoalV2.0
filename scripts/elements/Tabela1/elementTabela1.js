@@ -2,7 +2,7 @@ import { DESCRICAO_TABELA_1 } from "../../CONTANTES.js"
 import { ElementBuilder } from "../ElementBuilder.js"
 
 const TABLE_ATTRIBUTES = {
-    class: "oculto",
+    class: "visivel",
     id: "divTabela1",
     name: "divTabela1"
 }
@@ -19,6 +19,7 @@ for(const {id, numero, japones, portugues} of DESCRICAO_TABELA_1){
     const tdDescricao = new ElementBuilder("td")
         .setTextContent(`${numero} ${japones} ${portugues}`)
         .appendTo(tr)
+        
     const tdValues = new ElementBuilder("td")
         .setTextContent("")
         .setAttributes({id: `${id}`})

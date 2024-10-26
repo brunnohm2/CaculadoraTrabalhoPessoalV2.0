@@ -1,4 +1,4 @@
-import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { calcularRange } from "../../script.js"
 import { Component } from "../Component.js"
 const FIELDSET_ATTRIBUTES = {
     class: "FIELDSET_CLASS",
@@ -14,4 +14,13 @@ const  INPUT_ATTRIBUTES = {
     step: 0.01,
     value: 0
 }
-export const elementAtraso = new Component(FIELDSET_ATTRIBUTES, LEGEND_TEXT_CONTENT, INPUT_ATTRIBUTES).getElement()
+const EVENT_LISTENER = {
+    type: 'input', 
+    callback: calcularRange
+}
+export const elementAtraso = new Component(
+    FIELDSET_ATTRIBUTES,
+    LEGEND_TEXT_CONTENT,
+    INPUT_ATTRIBUTES,
+    EVENT_LISTENER
+).getElement()

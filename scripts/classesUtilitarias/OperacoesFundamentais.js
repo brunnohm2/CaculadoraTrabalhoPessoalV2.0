@@ -7,7 +7,7 @@ export default class OperacoesFundamentais {
     */
    static adicao(...valores) {
        // ! Sintaxe utilizada Arrow Functions
-       const total = valores.reduce((total, proximoValor) => total + proximoValor, 0)
+       const total = valores.reduce((total, proximoValor) => total + Number(proximoValor), 0)
        return Utilitarios.autoDecimal(total)
     }
     /**

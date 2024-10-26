@@ -11,7 +11,8 @@ export class Component{
             .setAttributes(INPUT_ATTRIBUTES)
 
         if (EVENT_LISTENER) {
-            this.input.addEventListener('input', EVENT_LISTENER)
+            const {type, callback} = EVENT_LISTENER
+            this.input.addEventListener(type, callback)
         }
         this.fieldset.appendChild(this.legend.getElement())
         this.fieldset.appendChild(this.input.getElement())
