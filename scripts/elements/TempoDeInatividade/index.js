@@ -6,6 +6,7 @@ import { elementSomaValores } from "./elementSomaValores.js";
 import { elementTempoDeFalha } from "./elementTempoDeFalha.js";
 import { elementTrocaDeFerramenta } from "./elementTrocaDeFerramenta.js";
 import { elementValorTotal } from "./elementValorTotal.js";
+import { elementValorTotalHoras } from "./elementValorTotalHora.js";
 
 const TEMPO_DE_INATIVIDADE_ATTRIBUTES = {
     class: "oculto",
@@ -15,6 +16,7 @@ const TEMPO_DE_INATIVIDADE_ATTRIBUTES = {
 export const tempoDeInatividade = new ElementBuilder("div")
     .setAttributes(TEMPO_DE_INATIVIDADE_ATTRIBUTES)
     .appendChild(elementValorTotal)
+    .appendChild(elementValorTotalHoras)
     .appendChild(elementTempoDeFalha)
     .appendChild(elementParadasFrequentes)
     .appendChild(elementMontagemDefeituosa)

@@ -1,4 +1,5 @@
 import Calculadora from "./calculadora.js"
+import { HoraConverter } from "./classesUtilitarias/HoraConverter.js"
 import OperacoesFundamentais from "./classesUtilitarias/OperacoesFundamentais.js"
 import Utilitarios from "./classesUtilitarias/Utilitarios.js"
 import { CYCLE_TIME_235 } from "./CONTANTES.js"
@@ -133,29 +134,31 @@ export function calcularRange(){
     const trocaDeFerramenta = window.document.querySelector("#trocaDeFerramenta")
     const valorSoma = document.querySelector("#valorSoma")
     const valorTotal = document.querySelector("#valorTotal")
+    const valorTotalHora = document.querySelector("#valorTotalHora")
     valorSoma.value = valorTotal.value
+
+    valorTotalHora.value = HoraConverter.converter(Number(valorTotal.value))
 
     const legendAtraso = window.document.querySelector("#elementAtraso>legend")
     let legendBKP = "遅れ Atraso:"
-    legendAtraso.textContent = `${legendBKP} ${atraso.value}`
+    legendAtraso.textContent = `${legendBKP} ${atraso.value} / ${HoraConverter.converter(atraso.value)}`
 
     const legendMontagemDefeituosa = window.document.querySelector("#elementMontagemDefeituosa>legend")
     legendBKP = "組付け不良 Montagem Defeituosa:"
-    legendMontagemDefeituosa.textContent = `${legendBKP} ${montagemDefeituosa.value}`
+    legendMontagemDefeituosa.textContent = `${legendBKP} ${montagemDefeituosa.value}  / ${HoraConverter.converter(montagemDefeituosa.value)}`
 
     const legendParadasFrequentes = window.document.querySelector("#elementParadasFrequentes>legend")
     legendBKP = "頻発停止 Paradas Frequentes:"
-    legendParadasFrequentes.textContent = `${legendBKP} ${paradasFrequentes.value}`
+    legendParadasFrequentes.textContent = `${legendBKP} ${paradasFrequentes.value}  / ${HoraConverter.converter(paradasFrequentes.value)}`
 
     const legendTempoDeFalha = window.document.querySelector("#elementTempoDeFalha>legend")
     legendBKP = "故障時間 Tempo de Falha:"
-    legendTempoDeFalha.textContent = `${legendBKP} ${tempoDeFalha.value}`
+    legendTempoDeFalha.textContent = `${legendBKP} ${tempoDeFalha.value}  / ${HoraConverter.converter(tempoDeFalha.value)}`
 
     const legendTrocaDeFerramenta = window.document.querySelector("#elementTrocaDeFerramenta>legend")
     legendBKP = "段替・刃交 Troca de ferramenta/configuração:"
-    legendTrocaDeFerramenta.textContent = `${legendBKP} ${trocaDeFerramenta.value}`
+    legendTrocaDeFerramenta.textContent = `${legendBKP} ${trocaDeFerramenta.value}  / ${HoraConverter.converter(trocaDeFerramenta.value)}`
 
-    console.log(legendAtraso)
     valorSoma.value = Utilitarios.autoDecimal(valorSoma.value-OperacoesFundamentais.adicao(
         atraso.value,
         montagemDefeituosa.value,
