@@ -8,7 +8,7 @@ export const CYCLE_TIME_235 =
         { valor: 23.5, multiplicador: 1, legenda: '1 Pessoa' },
         { valor: 20.3, multiplicador: 2, legenda: '2 Pessoas' }
     ],
-    'J/A - ジョイントサブASSY':[
+    'J/A - ジョイントサブ ASSY':[
         { valor: 19.5, multiplicador: 2, legenda: '2 Máquinas' },
         { valor: 17, multiplicador: 2, legenda: '3 Máquinas' }
     ],
@@ -24,7 +24,8 @@ export const CYCLE_TIME_235 =
         { valor: 45, multiplicador: 1, legenda: '1 Pessoa' }
     ]
 }
-export const DESCRICAO_TABELA_1 = [
+export const DESCRICAO_TABELA_1 = 
+[
     {
         numero: "②",
         japones: "生産台数 (台)",
