@@ -75,4 +75,6 @@ export const DESCRICAO_TABELA_1 =
         id: "tabTempoAcumulativoPorPessoa"
     }
 ]
-export const FIELDSET_CLASS = "teste"
+export const FIELDSET_CLASS_M = "input-largura-m"
+export const FIELDSET_CLASS_G = "input-largura-g"
+export const FIELDSET_CLASS_P = "input-largura-p"

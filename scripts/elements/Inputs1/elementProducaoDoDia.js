@@ -1,9 +1,9 @@
-import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { FIELDSET_CLASS_M } from "../../CONTANTES.js"
 import { gerarOptionTempo } from "../../script.js"
 import { Component } from "../Component.js"
 
 const FIELDSET_ATTRIBUTES = {
-    class: FIELDSET_CLASS,
+    class: FIELDSET_CLASS_M,
     id: "elementProducaoDoDia"
 }
 const LEGEND_TEXT_CONTENT = "生産台数 Quant. Produção"

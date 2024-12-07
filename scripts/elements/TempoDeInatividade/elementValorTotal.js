@@ -1,7 +1,7 @@
-import { FIELDSET_CLASS } from "../../CONTANTES.js"
+import { FIELDSET_CLASS_M } from "../../CONTANTES.js"
 import { Component } from "../Component.js"
 const FIELDSET_ATTRIBUTES = {
-    class: FIELDSET_CLASS,
+    class: FIELDSET_CLASS_M,
     id: "elementValorTotal"
 }
 const LEGEND_TEXT_CONTENT = "④ - ③:"

@@ -66,9 +66,17 @@ fieldset {
     font-size: 0.8em;
 }
 
-.teste {
+.input-largura-p {
+    display: inline;
+    width: 50px;
+}
+.input-largura-m {
     display: inline;
     width: 150px;
+}
+.input-largura-g {
+    display: inline;
+    width: 100%;
 }
 
 input[type=number], input[type=text], input[type=range] {
