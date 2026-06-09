@@ -14,7 +14,7 @@ export const CYCLE_TIME_235 =
     ],
     'F/Y - フランジヨク':[
         { valor: 22.5, multiplicador: 1, legenda: '1 Pessoa' },
-        { valor: 17.5, multiplicador: 2, legenda: '2 Pessoas' }
+        { valor: 19.2, multiplicador: 2, legenda: '2 Pessoas' }
     ],
     'F/A - フランジサブ ASSY':[
         { valor: 39, multiplicador: 1, legenda: 'T4D' },
